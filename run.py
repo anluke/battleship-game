@@ -1,5 +1,5 @@
 import colorama
-from colorama import Back, Fore, Style
+from colorama import Fore
 from random import randint
 
 colorama.init(autoreset=True)
@@ -9,8 +9,8 @@ board = [[" "] * 8 for i in range(8)]
 
 
 def print_board(board):
-    print(Fore.RED + "  0 1 2 3 4 5 6 7")
-    print(Fore.RED + "  ---------------")
+    print("  0 1 2 3 4 5 6 7")
+    print("  ---------------")
     row_number = 0
     for row in board:
         print("%d|%s|" % (row_number, "|".join(row)))
@@ -19,7 +19,9 @@ def print_board(board):
 
 print("----------------------")
 print(" ")
-print("Let's play Battleship!")
+print(Fore.MAGENTA + "  BATTLESHIP GAME  ")
+print(" ")
+print(Fore.MAGENTA + "   LET'S PLAY !")
 print(" ")
 print("----------------------")
 print(" ")
@@ -52,39 +54,54 @@ for turn in range(4):
             guess_col = int(input("Guess Column: "))
             break
         except ValueError:
-            print("please enter a valid input")
+            print(" ")
+            print(Fore.RED + "Number needed! Please enter a valid input!")
+            print(" ")
     
     if guess_row == random_ship_row and guess_col == random_ship_column:
         board[guess_row][guess_col] = 'X'
         print_board(board)
+        print(board[guess_row][guess_col])
         print(" ")
         print("---------------------")
-        print("    CONGRATZ")
-        print("***  IT'S A HIT  ***")
+        print(Fore.GREEN + "    CONGRATZ")
+        print(Fore.GREEN + "***  IT'S A HIT  ***")
         print(Fore.RED + f'Enemy ship was located in row: {random_ship_row} and column: {random_ship_column}')
-        print("***  YOU WIN  ***")
+        print(Fore.GREEN + "***  YOU WIN  ***")
         print("---------------------")
         print(" ")
         break
     elif (guess_row < 0 or guess_row > 7) or (guess_col < 0 or guess_col > 7):
         print(" ")
-        print("Out of bounds. Please choose a number between 0 and 7")
+        print("----------------------------")
+        print(Fore.RED + "** OUT OF BOUNDS **")
+        print(Fore.YELLOW + f'Your input row was: {guess_row} & column: {guess_col}')
+        print(Fore.RED + "PLEASE CHOOSE A NUMBER BETWEEN 0 and 7")
+        print("----------------------------")
         print(" ")
-    elif board[guess_row][guess_col] == '0':
+    elif board[guess_row][guess_col] == '+':
         print(" ")
-        print("You guessed that one already")
+        print("----------------------------")
+        print(Fore.RED + "** YOU USED THESE COORDINATES ALREADY **")
+        print("----------------------------")
         print(" ")
     else:
         print(" ")
-        print("You missed my battleship")
+        print("----------------------------")
+        print(Fore.CYAN + "You missed my battleship")
+        print("----------------------------")
         print(" ")
-        board[guess_row][guess_col] = "0"
+        board[guess_row][guess_col] = "+"
     if turn == 3:
+        print(" ")
+        print(" ")
         print("--------------------")
-        print("NO MORE ATTEMPTS")
-        print("***  GAME OVER  ***")
+        print(" ")
+        print(Fore.RED + "  NO MORE ATTEMPTS")
+        print(Fore.RED + "***  GAME OVER  ***")
+        print(Fore.RED + "***  YOU LOSE  ***")
+        print(" ")
         print("--------------------")
-        print("***  YOU LOSE  ***")
         print(" ")
         print(" ")
     turn = turn + 1
