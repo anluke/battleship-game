@@ -1,4 +1,4 @@
-import colorama
+import colorama  
 from colorama import Fore
 from random import randint
 
@@ -7,7 +7,9 @@ colorama.init(autoreset=True)
 
 board = [[" "] * 8 for i in range(8)]
 
-
+"""
+This created a board that we use to play. It created rows & columns, from 0 to 7.
+"""
 def print_board(board):
     print("  0 1 2 3 4 5 6 7")
     print("  ---------------")
@@ -51,17 +53,17 @@ for turn in range(4):
     while True:
         try:
             guess_row = int(input("Guess Row: "))
-            guess_col = int(input("Guess Column: "))
+            guess_column = int(input("Guess Column: "))
             break
         except ValueError:
             print(" ")
             print(Fore.RED + "Number needed! Please enter a valid input!")
             print(" ")
     
-    if guess_row == random_ship_row and guess_col == random_ship_column:
-        board[guess_row][guess_col] = 'X'
+    if guess_row == random_ship_row and guess_column == random_ship_column:
+        board[guess_row][guess_column] = 'X'
         print_board(board)
-        print(board[guess_row][guess_col])
+        print(board[guess_row][guess_column])
         print(" ")
         print("---------------------")
         print(Fore.GREEN + "    CONGRATZ")
@@ -71,15 +73,15 @@ for turn in range(4):
         print("---------------------")
         print(" ")
         break
-    elif (guess_row < 0 or guess_row > 7) or (guess_col < 0 or guess_col > 7):
+    elif (guess_row < 0 or guess_row > 7) or (guess_column < 0 or guess_column > 7):
         print(" ")
         print("----------------------------")
         print(Fore.RED + "** OUT OF BOUNDS **")
-        print(Fore.YELLOW + f'Your input row was: {guess_row} & column: {guess_col}')
+        print(Fore.YELLOW + f'Your input row was: {guess_row} & column: {guess_column}')
         print(Fore.RED + "PLEASE CHOOSE A NUMBER BETWEEN 0 and 7")
         print("----------------------------")
         print(" ")
-    elif board[guess_row][guess_col] == '+':
+    elif board[guess_row][guess_column] == 'O':
         print(" ")
         print("----------------------------")
         print(Fore.RED + "** YOU USED THESE COORDINATES ALREADY **")
@@ -88,21 +90,23 @@ for turn in range(4):
     else:
         print(" ")
         print("----------------------------")
-        print(Fore.CYAN + "You missed my battleship")
+        print(Fore.CYAN + "YOU MISSED THE BATTLESHIP")
         print("----------------------------")
         print(" ")
-        board[guess_row][guess_col] = "+"
+        board[guess_row][guess_column] = "0"
     if turn == 3:
         print(" ")
         print(" ")
-        print("--------------------")
+        print("-----------------------------------------------")
         print(" ")
-        print(Fore.RED + "  NO MORE ATTEMPTS")
-        print(Fore.RED + "***  GAME OVER  ***")
-        print(Fore.RED + "***  YOU LOSE  ***")
+        print(Fore.RED + "        NO MORE ATTEMPTS")
+        print(Fore.RED + "YOU DID NOT HIT COMPUTER BATTLESHIP")
         print(" ")
-        print("--------------------")
+        print(Fore.RED + "      ***  GAME OVER  ***")
+        print(Fore.RED + "      ***  YOU LOSE  ***")
         print(" ")
+        print("-----------------------------------------------")
         print(" ")
     turn = turn + 1
     print_board(board)
+    print(" ")
