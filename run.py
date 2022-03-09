@@ -1,6 +1,11 @@
-import colorama  
-from colorama import Fore
-from random import randint
+# LEGEND
+
+# O - appears on board if guess is a miss
+# X - appears on board if guess is a hit and exits the game
+
+import colorama  # imported colorama to color code some of the text printed to console
+from colorama import Fore # Fore used from colorama to add color to print content
+from random import randint # imported random to randomize numbers used for computer ship
 
 colorama.init(autoreset=True)
 
@@ -8,7 +13,7 @@ colorama.init(autoreset=True)
 board = [[" "] * 8 for i in range(8)]
 
 """
-This created a board that we use to play. It created rows & columns, from 0 to 7.
+This function creates a playboard consisting of rows and columns ranging from 0 to 7.
 """
 def print_board(board):
     print("  0 1 2 3 4 5 6 7")
@@ -30,27 +35,31 @@ print(" ")
 print_board(board)
 
 
+"""
+Function that puts a computer ship at the random row number
+"""
 def create_random_row(board):
     return randint(0, len(board)-1)
 
 
+"""
+Function that puts a computer ship at the random column number
+"""
 def create_random_column(board):
     return randint(0, len(board[0])-1)
 
 
-random_ship_row = create_random_row(board)
+random_ship_row = create_random_row(board) 
 random_ship_column = create_random_column(board)
-print(" ")
-print(" ")
-print("Computer result: (TEMPORARY ONLY)")
 print(random_ship_row)
 print(random_ship_column)
 
-for turn in range(4):
+for turn in range(8): # created a rule for turn of 8 attempts
     print(" ")
-    print("Turn", turn + 1)
+    print(Fore.YELLOW + "TURN", turn + 1)
     print(" ")
     while True:
+        # if a user inputs an invalid value such as (empty string, text, letters) this prevents our game from crashing
         try:
             guess_row = int(input("Guess Row: "))
             guess_column = int(input("Guess Column: "))
@@ -66,10 +75,10 @@ for turn in range(4):
         print(board[guess_row][guess_column])
         print(" ")
         print("---------------------")
-        print(Fore.GREEN + "    CONGRATZ")
+        print(Fore.GREEN + "      CONGRATZ")
         print(Fore.GREEN + "***  IT'S A HIT  ***")
         print(Fore.RED + f'Enemy ship was located in row: {random_ship_row} and column: {random_ship_column}')
-        print(Fore.GREEN + "***  YOU WIN  ***")
+        print(Fore.GREEN + "***    YOU WIN  ***")
         print("---------------------")
         print(" ")
         break
@@ -93,8 +102,8 @@ for turn in range(4):
         print(Fore.CYAN + "YOU MISSED THE BATTLESHIP")
         print("----------------------------")
         print(" ")
-        board[guess_row][guess_column] = "0"
-    if turn == 3:
+        board[guess_row][guess_column] = "O"
+    if turn == 7:
         print(" ")
         print(" ")
         print("-----------------------------------------------")
