@@ -10,7 +10,7 @@ board = [[" "] * 8 for i in range(8)]
 
 def print_board(board):
     print(Fore.RED + "  0 1 2 3 4 5 6 7")
-    print(Fore.RED + "  *-*-*-*-*-*-*-*")
+    print(Fore.RED + "  ---------------")
     row_number = 0
     for row in board:
         print("%d|%s|" % (row_number, "|".join(row)))
@@ -61,7 +61,7 @@ for turn in range(4):
         print("---------------------")
         print("    CONGRATZ")
         print("***  IT'S A HIT  ***")
-        print(f'Enemy ship was located in row: {random_ship_row} and column: {random_ship_column}')
+        print(Fore.RED + f'Enemy ship was located in row: {random_ship_row} and column: {random_ship_column}')
         print("***  YOU WIN  ***")
         print("---------------------")
         print(" ")
@@ -79,13 +79,13 @@ for turn in range(4):
         print("You missed my battleship")
         print(" ")
         board[guess_row][guess_col] = "0"
-        if turn == 3:
-            print("--------------------")
-            print("NO MORE ATTEMPTS")
-            print("***  GAME OVER  ***")
-            print("--------------------")
-            print("***  YOU LOSE  ***")
-            print(" ")
-            print(" ")
+    if turn == 3:
+        print("--------------------")
+        print("NO MORE ATTEMPTS")
+        print("***  GAME OVER  ***")
+        print("--------------------")
+        print("***  YOU LOSE  ***")
+        print(" ")
+        print(" ")
     turn = turn + 1
     print_board(board)
