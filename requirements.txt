@@ -1,1 +1,1 @@
-pip-install-colorama==3.8.11
+# Your requirements go here

@@ -1,12 +1,7 @@
 # O - appears on board if guess is a miss
 # X - appears on board if guess is a hit and exits the game
 
-# import colorama
-# from colorama import Fore
 from random import randint
-
-# colorama.init(autoreset=True)
-
 
 board = [[" "] * 8 for i in range(8)]
 
