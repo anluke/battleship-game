@@ -1,31 +1,64 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# BATTLESHIP GAME
 
-Welcome anluke,
+This project was built to for Code Institute's Porfolio 3 Assessment.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+**Battleship** is a Python terminal game which runs in the Code Institute mock terminal on Heroku.
 
-## Reminders
+The live website can be found [here](link).
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
 
-## Creating the Heroku app
+## How To Play
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+Battleship game is based on the classic pen-and-paper game. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Battleship_(game))  
+In this version the player is welcomed with a quick intro on top that described the game layout.  
+From the start of the game it randomly places a computer ship somewhere on the grid.  
+If a player guesses the location it will mark that spot with **'X'** and end the game with player being victorious.  
+If a player misses the turn it will mark the spot with **'O'** and continue turns.
 
-1. `heroku/python`
-2. `heroku/nodejs`
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## Features
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+
 
 Connect your GitHub repository and deploy as normal.
 
-## Constraints
+## Testing
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+I have manually tested this project by doing the following:  
 
------
-Happy coding!
+ - Passed the code through a PEP8 linter and confirmed there are no problems
+ - Given invalid inputs: strings when numbers are expected, out of bounds inputs, same input twice.
+ - Tested in my local terminal and the Code Institute Heroku terminal.
+
+### Bugs
+
+**Solved Bugs**
+ - When I wrote the ```try``` and ```except``` rule it did not catch ```ValueError``` as I anticipated so I realised that my mistake was indentation and position of my Exception rule.
+
+ **Remaining Bugs**
+
+  - No bugs remaining
+
+
+**Validator Testing**
+ - PEP8
+    - No errors were returned from PEP8online.com
+
+## Deployment
+
+This project was deployed using Code Institute's mock terminal for Heroku.
+
+ - Steps for deployment:
+     - Fork or clone this repository
+     - Create a new Heroku app
+     - Set the buildbacks to ```Python``` and ```NodeJS``` in that order
+     - Link the Heroku app to the repository
+     - Click on **Deploy**
+
+## Credits
+
+ - Sample README.md file from P3 Project Scope. I used this as a general guide and structured my README file using this as an example.
+
+ - Wikipedia link on the top of the README file to provide more info on the Battleship game.
+
+ - 
