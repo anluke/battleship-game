@@ -20,7 +20,7 @@ If a player misses the turn it will mark the spot with **'O'** and continue turn
 
 ### Start Game - Intro
 
-![Footer](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/game_start_intro.png?raw=true)
+![Start Game](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/game_start_intro.png?raw=true)
 
   - Battleship board generates from the start and the computer places a ship at the random location.
   - The player cannot see where the computer's ship is.
@@ -29,14 +29,47 @@ If a player misses the turn it will mark the spot with **'O'** and continue turn
 
 ### Win Game
 
-![Footer](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/win_game.png?raw=true)
+![Win Game](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/win_game.png?raw=true)
 
  - If the player manages to hit computer's battleship, the game ends with player as a winner.
  - It also positions the **'X'** mark on the battleship board to easily distinguish the location of the computer ship.
  - In the print statement above the board it displays the coordinates of the ship. 
  - It also displayes a winning statement congratulating the player on the success.
 
+### Lose Game
 
+![Lose Game](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/lose_game.png?raw=true)
+
+ - The player will lose if he runs out of Turns.
+ - The console will print out the statement that player lost and that he was unsuccessful finding computer ship.
+ - This ends the game and the player has to start anew.
+
+ ### Miss Battleship
+
+
+![Miss Battleship](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/battleship_miss.png?raw=true)
+
+ - If the player misses the battleship, the statement will appear and **'O'** mark will appear on the coordinates selected.
+
+![Board Miss](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/board_filling.png?raw=true)
+
+- As the Turns go, the board starts to fill up with player's misses as seen in above image.
+
+
+## Input Validation
+
+![Out of Bounds](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/out_of_bounds.png?raw=true)
+
+- During the game it's important to capture the wrong data and prompt the player to type the correct value.
+- As you can see above, if a player inputs the value larger then what is required, the error message prints in the console with a reminder that a number required is between **0** and **7**.
+- After it prints that value, the **Turn** is spent and the game continues on. The reason, because the input is still a number only outside of the limits of the game.
+
+
+![Emptry String](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/empty_string.png?raw=true)  ![Word](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/word_error.png?raw=true)
+
+ - The player is not allowed to input an emptry string or a word. As seen above the console will print that the number is needed.
+ - The code will not continue so **Turn** will freeze for the time being.
+ - Console will keep prompting the player for a number and once the number has been input, the game will continue.
 
 
 ## Testing
