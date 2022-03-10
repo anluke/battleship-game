@@ -24,15 +24,12 @@ def print_board(board):
         row_number += 1
 
 
-print("----------------------")
-print(" ")
+print("-----------------------------------------------")
 print("BATTLESHIP GAME")
-print("BOARD SIZE: 5, NUMBER OF SHIPS: 1 ")
+print("BOARD SIZE: 5, NUMBER OF SHIPS: 1")
 print("TOP LEFT CORNER IS ROW:0, COL:0")
 print("USE NUMBERS FROM 0 TO 7")
-print(" ")
-print("----------------------")
-print(" ")
+print("-----------------------------------------------")
 print_board(board)
 
 
@@ -56,7 +53,7 @@ print(random_ship_row)
 print(random_ship_column)
 
 
-for turn in range(5):  # created a rule for turn of 5 attempts
+for turn in range(8):  # created a rule for turn of 5 attempts
     print(" ")
     print("TURN", turn + 1)
     print(" ")
@@ -74,51 +71,39 @@ for turn in range(5):  # created a rule for turn of 5 attempts
 
     if guess_row == random_ship_row and guess_column == random_ship_column:
         board[guess_row][guess_column] = 'X'
-        print_board(board)
         print(board[guess_row][guess_column])
-        print(" ")
-        print("---------------------")
+        print("-----------------------------------------------")
         print("      CONGRATZ")
         print("***  IT'S A HIT  ***")
-        print(f'Located: row: {random_ship_row}')
-        print(f'         column: {random_ship_column}')
-        print("***    YOU WIN  ***")
-        print("---------------------")
-        print(" ")
+        print(f'       Row: {random_ship_row}')
+        print(f'      Column: {random_ship_column}')
+        print("***   YOU WIN  ***")
+        print("-----------------------------------------------")
         break
     elif (guess_row < 0 or guess_row > 7) or \
          (guess_column < 0 or guess_column > 7):
-        print(" ")
-        print("----------------------------")
+        print("-----------------------------------------------")
         print("** OUT OF BOUNDS **")
         print('Your input row was: {guess_row} & column: {guess_column}')
         print("PLEASE CHOOSE A NUMBER BETWEEN 0 and 7")
-        print("----------------------------")
-        print(" ")
+        print("-----------------------------------------------")
     elif board[guess_row][guess_column] == 'O':
-        print(" ")
-        print("----------------------------")
+        print("-----------------------------------------------")
         print("** YOU USED THESE COORDINATES ALREADY **")
-        print("----------------------------")
-        print(" ")
+        print("-----------------------------------------------")
     else:
-        print(" ")
-        print("----------------------------")
+        print("-----------------------------------------------")
         print("YOU MISSED THE BATTLESHIP")
-        print("----------------------------")
-        print(" ")
+        print("-----------------------------------------------")
         board[guess_row][guess_column] = "O"
-    if turn == 4:
-        print(" ")
+    if turn == 7:
         print(" ")
         print("-----------------------------------------------")
-        print(" ")
         print("        NO MORE ATTEMPTS")
         print("YOU DID NOT HIT COMPUTER BATTLESHIP")
         print(" ")
         print("      ***  GAME OVER  ***")
         print("      ***  YOU LOSE  ***")
-        print(" ")
         print("-----------------------------------------------")
         print(" ")
     turn = turn + 1
