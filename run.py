@@ -21,7 +21,7 @@ def print_board(board):
 
 print("-----------------------------------------------")
 print("BATTLESHIP GAME")
-print("BOARD SIZE: 5, NUMBER OF SHIPS: 1")
+print("BOARD SIZE: 7, NUMBER OF SHIPS: 1")
 print("TOP LEFT CORNER IS ROW:0, COL:0")
 print("USE NUMBERS FROM 0 TO 7")
 print("-----------------------------------------------")
@@ -49,9 +49,9 @@ print(random_ship_column)
 
 
 for turn in range(8):  # created a rule for turn of 5 attempts
-    print(" ")
+    print(" ")  # space added
     print("TURN", turn + 1)
-    print(" ")
+    print(" ")  # space added
     while True:
         # if a user inputs an invalid value such as
         # (empty string, text, letters) this prevents our game from crashing
@@ -60,12 +60,12 @@ for turn in range(8):  # created a rule for turn of 5 attempts
             guess_column = int(input("Guess Column: "))
             break
         except ValueError:
-            print(" ")
+            print(" ")  # space added
             print("Number needed! Please enter a valid input!")
-            print(" ")
+            print(" ")  # space added
 
     if guess_row == random_ship_row and guess_column == random_ship_column:
-        print(board[guess_row][guess_column])
+        board[guess_row][guess_column] = 'X'
         print("-----------------------------------------------")
         print("      CONGRATZ")
         print("***  IT'S A HIT  ***")
@@ -92,15 +92,15 @@ for turn in range(8):  # created a rule for turn of 5 attempts
         print("-----------------------------------------------")
         board[guess_row][guess_column] = "O"
     if turn == 7:
-        print(" ")
+        print(" ")  # space added
         print("-----------------------------------------------")
         print("        NO MORE ATTEMPTS")
         print("YOU DID NOT HIT COMPUTER BATTLESHIP")
-        print(" ")
+        print(" ")  # space added
         print("      ***  GAME OVER  ***")
         print("      ***  YOU LOSE  ***")
         print("-----------------------------------------------")
-        print(" ")
+        print(" ")  # space added
     turn = turn + 1
     print_board(board)
-    print(" ")
+    print(" ")  # space added
