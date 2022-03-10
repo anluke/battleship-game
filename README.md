@@ -18,7 +18,7 @@ If a player misses the turn it will mark the spot with **'O'** and continue turn
 
 ## Features
 
-**Existing Features**
+### Start Game - Intro
 
 ![Footer](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/game_start_intro.png?raw=true)
 
@@ -26,6 +26,8 @@ If a player misses the turn it will mark the spot with **'O'** and continue turn
   - The player cannot see where the computer's ship is.
   - The game also starts with a **Turn** counter. The game will have maximum of 8 Turns. It is also displayed in the game intro.
   - The player cannot see where the computer's ship is.
+
+##
 
 ## Testing
 
