@@ -70,7 +70,7 @@ for turn in range(8):  # created a rule for turn of 5 attempts
         print("  ***  IT'S A HIT  ***")
         print(f'        Row: {random_ship_row}')
         print(f'       Column: {random_ship_column}')
-        print(" ***    YOU WIN  ***")
+        print("   ***  YOU WIN  ***")
         print(" ---------------------")
         print_board(board)
         break

@@ -27,7 +27,17 @@ If a player misses the turn it will mark the spot with **'O'** and continue turn
   - The game also starts with a **Turn** counter. The game will have maximum of 8 Turns. It is also displayed in the game intro.
   - The player cannot see where the computer's ship is.
 
-##
+### Win Game
+
+![Footer](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/win_game.png?raw=true)
+
+ - If the player manages to hit computer's battleship, the game ends with player as a winner.
+ - It also positions the **'X'** mark on the battleship board to easily distinguish the location of the computer ship.
+ - In the print statement above the board it displays the coordinates of the ship. 
+ - It also displayes a winning statement congratulating the player on the success.
+
+
+
 
 ## Testing
 
