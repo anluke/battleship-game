@@ -18,9 +18,14 @@ If a player misses the turn it will mark the spot with **'O'** and continue turn
 
 ## Features
 
+**Existing Features**
 
+![Footer](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/game_start_intro.png?raw=true)
 
-Connect your GitHub repository and deploy as normal.
+  - Battleship board generates from the start and the computer places a ship at the random location.
+  - The player cannot see where the computer's ship is.
+  - The game also starts with a **Turn** counter. The game will have maximum of 8 Turns. It is also displayed in the game intro.
+  - The player cannot see where the computer's ship is.
 
 ## Testing
 
