@@ -19,12 +19,12 @@ def print_board(board):
         row_number += 1
 
 
-print(" -----------------------------------------------")
+print(" -----------------------------------")
 print("  BATTLESHIP GAME")
 print("  BOARD SIZE: 7, NUMBER OF SHIPS: 1")
 print("  TOP LEFT CORNER IS ROW:0, COL:0")
 print("  USE NUMBERS FROM 0 TO 7")
-print(" -----------------------------------------------")
+print(" -----------------------------------")
 print_board(board)
 
 
@@ -44,6 +44,8 @@ def create_random_column(board):
 
 random_ship_row = create_random_row(board)
 random_ship_column = create_random_column(board)
+print(random_ship_row)
+print(random_ship_column)
 
 
 for turn in range(8):  # created a rule for turn of 5 attempts
@@ -64,40 +66,40 @@ for turn in range(8):  # created a rule for turn of 5 attempts
 
     if guess_row == random_ship_row and guess_column == random_ship_column:
         board[guess_row][guess_column] = 'X'
-        print(" -----------------------------------------------")
+        print(" ---------------------")
         print("        CONGRATZ")
         print("  ***  IT'S A HIT  ***")
         print(f'        Row: {random_ship_row}')
         print(f'       Column: {random_ship_column}')
         print(" ***    YOU WIN  ***")
-        print(" -----------------------------------------------")
+        print(" ---------------------")
         print_board(board)
         break
     elif (guess_row < 0 or guess_row > 7) or \
          (guess_column < 0 or guess_column > 7):
-        print(" -----------------------------------------------")
+        print(" ---------------------------------------")
         print("          ** OUT OF BOUNDS **")
         print(f'   Your input row was: {guess_row} & column: {guess_column}')
         print("  PLEASE CHOOSE A NUMBER BETWEEN 0 and 7")
-        print(" -----------------------------------------------")
+        print(" ---------------------------------------")
     elif board[guess_row][guess_column] == 'O':
-        print(" -----------------------------------------------")
+        print(" ----------------------------------------")
         print(" ** YOU USED THESE COORDINATES ALREADY **")
-        print(" -----------------------------------------------")
+        print(" ----------------------------------------")
     else:
-        print(" -----------------------------------------------")
+        print(" --------------------------")
         print(" YOU MISSED THE BATTLESHIP")
-        print(" -----------------------------------------------")
+        print(" ---------------------------")
         board[guess_row][guess_column] = "O"
     if turn == 7:
         print(" ")  # space added
-        print(" -----------------------------------------------")
+        print(" ------------------------------------")
         print("        NO MORE ATTEMPTS")
         print(" YOU DID NOT HIT COMPUTER BATTLESHIP")
         print(" ")  # space added
         print("      ***  GAME OVER  ***")
         print("      ***  YOU LOSE  ***")
-        print(" -----------------------------------------------")
+        print(" ------------------------------------")
         print(" ")  # space added
     turn = turn + 1
     print_board(board)
