@@ -44,8 +44,6 @@ def create_random_column(board):
 
 random_ship_row = create_random_row(board)
 random_ship_column = create_random_column(board)
-print(random_ship_row)
-print(random_ship_column)
 
 
 for turn in range(8):  # created a rule for turn of 5 attempts
