@@ -11,8 +11,8 @@ def print_board(board):
     This function creates a playboard
     consisting of rows and columns ranging from 0 to 7.
     """
-    print("  0 1 2 3 4 5 6 7")
-    print("  ---------------")
+    print("   0 1 2 3 4 5 6 7")
+    print("  -----------------")
     row_number = 0
     for row in board:
         print(" %d|%s|" % (row_number, "|".join(row)))
