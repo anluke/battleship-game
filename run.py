@@ -52,6 +52,8 @@ def create_random_column(board):
 
 random_ship_row = create_random_row(board)
 random_ship_column = create_random_column(board)
+print(random_ship_row)
+print(random_ship_column)
 
 
 for turn in range(5):  # created a rule for turn of 5 attempts
@@ -78,8 +80,7 @@ for turn in range(5):  # created a rule for turn of 5 attempts
         print("---------------------")
         print(Fore.GREEN + "      CONGRATZ")
         print(Fore.GREEN + "***  IT'S A HIT  ***")
-        print(Fore.RED + f'Enemy ship was located in row: {random_ship_row}\
-             and column: {random_ship_column}')
+        print(Fore.RED + f'Enemy ship was located in row: {random_ship_row} & column: {random_ship_column}')
         print(Fore.GREEN + "***    YOU WIN  ***")
         print("---------------------")
         print(" ")
@@ -89,8 +90,7 @@ for turn in range(5):  # created a rule for turn of 5 attempts
         print(" ")
         print("----------------------------")
         print(Fore.RED + "** OUT OF BOUNDS **")
-        print(Fore.YELLOW + f'Your input row was: {guess_row} \
-             & column: {guess_column}')
+        print(Fore.YELLOW + f'Your input row was: {guess_row} & column: {guess_column}')
         print(Fore.RED + "PLEASE CHOOSE A NUMBER BETWEEN 0 and 7")
         print("----------------------------")
         print(" ")
