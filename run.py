@@ -65,7 +65,6 @@ for turn in range(8):  # created a rule for turn of 5 attempts
             print(" ")
 
     if guess_row == random_ship_row and guess_column == random_ship_column:
-        board[guess_row][guess_column] = 'X'
         print(board[guess_row][guess_column])
         print("-----------------------------------------------")
         print("      CONGRATZ")
@@ -74,12 +73,13 @@ for turn in range(8):  # created a rule for turn of 5 attempts
         print(f'      Column: {random_ship_column}')
         print("***   YOU WIN  ***")
         print("-----------------------------------------------")
+        print_board(board)
         break
     elif (guess_row < 0 or guess_row > 7) or \
          (guess_column < 0 or guess_column > 7):
         print("-----------------------------------------------")
         print("** OUT OF BOUNDS **")
-        print('Your input row was: {guess_row} & column: {guess_column}')
+        print(f'Your input row was: {guess_row} & column: {guess_column}')
         print("PLEASE CHOOSE A NUMBER BETWEEN 0 and 7")
         print("-----------------------------------------------")
     elif board[guess_row][guess_column] == 'O':
