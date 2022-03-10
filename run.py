@@ -1,11 +1,11 @@
 # O - appears on board if guess is a miss
 # X - appears on board if guess is a hit and exits the game
 
-import colorama
-from colorama import Fore
+# import colorama
+# from colorama import Fore
 from random import randint
 
-colorama.init(autoreset=True)
+# colorama.init(autoreset=True)
 
 
 board = [[" "] * 8 for i in range(8)]
@@ -26,10 +26,10 @@ def print_board(board):
 
 print("----------------------")
 print(" ")
-print(Fore.MAGENTA + "BATTLESHIP GAME")
-print(Fore.MAGENTA + "BOARD SIZE: 5, NUMBER OF SHIPS: 1 ")
-print(Fore.MAGENTA + "TOP LEFT CORNER IS ROW:0, COL:0")
-print(Fore.MAGENTA + "USE NUMBERS FROM 0 TO 7")
+print("BATTLESHIP GAME")
+print("BOARD SIZE: 5, NUMBER OF SHIPS: 1 ")
+print("TOP LEFT CORNER IS ROW:0, COL:0")
+print("USE NUMBERS FROM 0 TO 7")
 print(" ")
 print("----------------------")
 print(" ")
@@ -58,7 +58,7 @@ print(random_ship_column)
 
 for turn in range(5):  # created a rule for turn of 5 attempts
     print(" ")
-    print(Fore.YELLOW + "TURN", turn + 1)
+    print("TURN", turn + 1)
     print(" ")
     while True:
         # if a user inputs an invalid value such as
@@ -69,7 +69,7 @@ for turn in range(5):  # created a rule for turn of 5 attempts
             break
         except ValueError:
             print(" ")
-            print(Fore.RED + "Number needed! Please enter a valid input!")
+            print("Number needed! Please enter a valid input!")
             print(" ")
 
     if guess_row == random_ship_row and guess_column == random_ship_column:
@@ -78,10 +78,11 @@ for turn in range(5):  # created a rule for turn of 5 attempts
         print(board[guess_row][guess_column])
         print(" ")
         print("---------------------")
-        print(Fore.GREEN + "      CONGRATZ")
-        print(Fore.GREEN + "***  IT'S A HIT  ***")
-        print(Fore.RED + f'Enemy ship was located in row: {random_ship_row} & column: {random_ship_column}')
-        print(Fore.GREEN + "***    YOU WIN  ***")
+        print("      CONGRATZ")
+        print("***  IT'S A HIT  ***")
+        print(f'Located: row: {random_ship_row}')
+        print(f'         column: {random_ship_column}')
+        print("***    YOU WIN  ***")
         print("---------------------")
         print(" ")
         break
@@ -89,21 +90,21 @@ for turn in range(5):  # created a rule for turn of 5 attempts
          (guess_column < 0 or guess_column > 7):
         print(" ")
         print("----------------------------")
-        print(Fore.RED + "** OUT OF BOUNDS **")
-        print(Fore.YELLOW + f'Your input row was: {guess_row} & column: {guess_column}')
-        print(Fore.RED + "PLEASE CHOOSE A NUMBER BETWEEN 0 and 7")
+        print("** OUT OF BOUNDS **")
+        print('Your input row was: {guess_row} & column: {guess_column}')
+        print("PLEASE CHOOSE A NUMBER BETWEEN 0 and 7")
         print("----------------------------")
         print(" ")
     elif board[guess_row][guess_column] == 'O':
         print(" ")
         print("----------------------------")
-        print(Fore.RED + "** YOU USED THESE COORDINATES ALREADY **")
+        print("** YOU USED THESE COORDINATES ALREADY **")
         print("----------------------------")
         print(" ")
     else:
         print(" ")
         print("----------------------------")
-        print(Fore.CYAN + "YOU MISSED THE BATTLESHIP")
+        print("YOU MISSED THE BATTLESHIP")
         print("----------------------------")
         print(" ")
         board[guess_row][guess_column] = "O"
@@ -112,11 +113,11 @@ for turn in range(5):  # created a rule for turn of 5 attempts
         print(" ")
         print("-----------------------------------------------")
         print(" ")
-        print(Fore.RED + "        NO MORE ATTEMPTS")
-        print(Fore.RED + "YOU DID NOT HIT COMPUTER BATTLESHIP")
+        print("        NO MORE ATTEMPTS")
+        print("YOU DID NOT HIT COMPUTER BATTLESHIP")
         print(" ")
-        print(Fore.RED + "      ***  GAME OVER  ***")
-        print(Fore.RED + "      ***  YOU LOSE  ***")
+        print("      ***  GAME OVER  ***")
+        print("      ***  YOU LOSE  ***")
         print(" ")
         print("-----------------------------------------------")
         print(" ")
