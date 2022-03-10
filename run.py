@@ -22,6 +22,7 @@ def print_board(board):
 print(" -----------------------------------")
 print("  BATTLESHIP GAME")
 print("  BOARD SIZE: 7, NUMBER OF SHIPS: 1")
+print("  ALLOWED TURNS:  8")
 print("  TOP LEFT CORNER IS ROW:0, COL:0")
 print("  USE NUMBERS FROM 0 TO 7")
 print(" -----------------------------------")
