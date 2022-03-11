@@ -4,7 +4,7 @@ This project was built to for Code Institute's Porfolio 3 Assessment.
 
 **Battleship** is a Python terminal game which runs in the Code Institute mock terminal on Heroku.
 
-The live website can be found [here](link).
+The live website can be found [here](https://battleship-game-p3.herokuapp.com/).
 
 <br />
 
@@ -29,6 +29,8 @@ If a player misses the turn it will mark the spot with **'O'** and continue turn
   - The game also starts with a **Turn** counter. The game will have maximum of 8 Turns. It is also displayed in the game intro.
   - The player cannot see where the computer's ship is.
 
+<br />
+
 ### Win Game
 
 ![Win Game](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/win_game.png?raw=true)
@@ -38,6 +40,8 @@ If a player misses the turn it will mark the spot with **'O'** and continue turn
  - In the print statement above the board it displays the coordinates of the ship. 
  - It also displayes a winning statement congratulating the player on the success.
 
+<br />
+
 ### Lose Game
 
 ![Lose Game](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/lose_game.png?raw=true)
@@ -45,6 +49,8 @@ If a player misses the turn it will mark the spot with **'O'** and continue turn
  - The player will lose if he runs out of Turns.
  - The console will print out the statement that player lost and that he was unsuccessful finding computer ship.
  - This ends the game and the player has to start anew.
+
+<br />
 
  ### Miss Battleship
 
@@ -57,6 +63,7 @@ If a player misses the turn it will mark the spot with **'O'** and continue turn
 
 - As the Turns go, the board starts to fill up with player's misses as seen in above image.
 
+<br />
 
 ## Input Validation
 
@@ -81,6 +88,24 @@ If a player misses the turn it will mark the spot with **'O'** and continue turn
 
 <br />
 
+## Data Model
+
+Main function of the game is ```print_board``` which automatically creates a **7** by **7** starting from the index **0**.  
+
+I also defined functions to create a random row and and column which are activated automatically and set coordinates for computer's ship.  
+
+The for loop will check for player's input and return a feedback depending on the value.
+
+
+### Future implementations
+
+ - In the future the game could be updated with a larger **Color Coded** battleship board.
+ - It could be a multiplayer game consisting of more then 1 player.
+ - I wanted to use the the content that was coveres so far and build something simple and comprehensive. Nevertheless,there is definitely more potential to this game.
+
+<br />
+
+
 ## Testing
 
 I have manually tested this project by doing the following:  
@@ -91,17 +116,22 @@ I have manually tested this project by doing the following:
 
 ### Bugs
 
-**Solved Bugs**
- - When I wrote the ```try``` and ```except``` rule it did not catch ```ValueError``` as I anticipated so I realised that my mistake was indentation and position of my Exception rule.
+ **Solved Bugs**
+  - When I wrote the ```try``` and ```except``` rule it did not catch ```ValueError``` as I anticipated so I realised that my mistake was indentation and position of my Exception rule.
 
- **Remaining Bugs**
+### Remaining Bugs
 
   - No bugs remaining
 
+<br />
 
-**Validator Testing**
- - PEP8
-    - No errors were returned from PEP8online.com
+### Validator Testing
+ 
+ #### PEP8
+
+   - No errors were returned from [PEP8 Python Validator](http://pep8online.com/.com)
+
+  ![PEP8 Check](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/pep8_check.png?raw=true)
 
 ## Deployment
 
@@ -116,8 +146,12 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 
 ## Credits
 
- - Sample README.md file from P3 Project Scope. I used this as a general guide and structured my README file using this as an example.
+ - Sample [README.md](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+PE_PAGPPF+2021_Q2/courseware/b3378fc1159e43e3b70916fdefdfae51/605f34e006594dc4ae19f5e60ec75e2e/) file from P3 Project Scope. I used this as a general guide and structured my README file using this as an example.
 
- - Wikipedia link on the top of the README file to provide more info on the Battleship game.
+ - [Wikipedia](https://en.wikipedia.org/wiki/Battleship_(game)) link on the top of the README file to provide more info on the Battleship game.
 
- - 
+ - I used YouTube as a starting reference point. The content creator is [Knowledge Mavens](https://www.youtube.com/channel/UC7CTkf5Za9VD6JU1C0ZXWlg). His video helped me create a battleship board the way I wanted. Link to the video can be found [here](https://www.youtube.com/watch?v=tF1WRCrd_HQ). 
+
+- [CodeAcademy](https://www.codecademy.com/) site was also helpful as a reference point. I quickly went through their small Battleship game project which can be found [here](https://www.codecademy.com/courses/learn-python/lessons/battleship/exercises/welcome-to-battleship). I used a similar layout for the base of my game.
+
+- The image for the README banner was downloaded from [PNG WING](https://www.pngwing.com/) and the link to the banner can be found [here](https://www.pngwing.com/en/free-png-nzrax)
