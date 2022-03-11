@@ -131,7 +131,7 @@ I have manually tested this project by doing the following:
  
  #### PEP8
 
-   - No errors were returned from [PEP8 Python Validator](http://pep8online.com/.com)
+   - No errors were returned from [PEP8 Python Validator](http://pep8online.com/)
 
   ![PEP8 Check](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/pep8_check.png?raw=true)
 
