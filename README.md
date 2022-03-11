@@ -6,6 +6,7 @@ This project was built to for Code Institute's Porfolio 3 Assessment.
 
 The live website can be found [here](link).
 
+<br />
 
 ## How To Play
 
@@ -15,6 +16,7 @@ From the start of the game it randomly places a computer ship somewhere on the g
 If a player guesses the location it will mark that spot with **'X'** and end the game with player being victorious.  
 If a player misses the turn it will mark the spot with **'O'** and continue turns.
 
+<br />
 
 ## Features
 
@@ -58,11 +60,17 @@ If a player misses the turn it will mark the spot with **'O'** and continue turn
 
 ## Input Validation
 
-![Out of Bounds](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/out_of_bounds.png?raw=true)
+![Out of Bounds](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/out_of_bounds.png?raw=true)  ![Used Coordinates](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/used_coordinates.png?raw=true)
 
 - During the game it's important to capture the wrong data and prompt the player to type the correct value.
-- As you can see above, if a player inputs the value larger then what is required, the error message prints in the console with a reminder that a number required is between **0** and **7**.
-- After it prints that value, the **Turn** is spent and the game continues on. The reason, because the input is still a number only outside of the limits of the game.
+- As you can see in the upper-left image, if a player inputs the value larger then what is required, the error message prints with a reminder that a number required is between **0** and **7**.
+- There is also a case where a player could use the same coordinates as shown in the upper-right example.
+- If so it will accept the input but print out a statement that those coordinates were used.
+- Both of these examples will take the players input and continue **Turn**. Reason being is that data was correct just not within game rules.
+
+
+<br />
+<br />
 
 
 ![Emptry String](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/empty_string.png?raw=true)  ![Word](https://github.com/anluke/battleship-game/blob/main/assets/images/readme_snips/word_error.png?raw=true)
@@ -71,6 +79,7 @@ If a player misses the turn it will mark the spot with **'O'** and continue turn
  - The code will not continue so **Turn** will freeze for the time being.
  - Console will keep prompting the player for a number and once the number has been input, the game will continue.
 
+<br />
 
 ## Testing
 
